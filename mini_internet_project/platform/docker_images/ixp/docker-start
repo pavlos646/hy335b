@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+chown -R quagga:quagga /etc/quagga
+/etc/init.d/quagga start
+
+sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
+
+mkdir -p /var/run/sshd
+chmod 0755 /var/run/sshd
+/usr/sbin/sshd
+
+mkdir -p /root/.ssh
+
+/usr/share/openvswitch/scripts/ovs-ctl start
+
+ovs-vsctl add-br IXP
+ovs-ofctl add-flow IXP action=NORMAL
+
+tail -f /dev/null # To keep the container running forever

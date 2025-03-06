@@ -1,0 +1,54 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     ns.group55. admin.group55. (
+                              55         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+
+        IN      NS      ns.group55.
+
+ns.group55.      IN      A       198.0.0.100
+
+host-LOND.group55.       IN      A       55.101.0.1
+LOND-host.group55.       IN      A       55.101.0.2
+host-PARI.group55.       IN      A       55.103.0.1
+PARI-host.group55.       IN      A       55.103.0.2
+host-NEWY.group55.       IN      A       55.105.0.1
+NEWY-host.group55.       IN      A       55.105.0.2
+host-BOST.group55.       IN      A       55.106.0.1
+BOST-host.group55.       IN      A       55.106.0.2
+host-ATLA.group55.       IN      A       55.107.0.1
+ATLA-host.group55.       IN      A       55.107.0.2
+host-MIAM.group55.       IN      A       55.108.0.1
+MIAM-host.group55.       IN      A       55.108.0.2
+ZURI-PARI.group55.       IN      A       55.0.1.1
+PARI-ZURI.group55.       IN      A       55.0.1.2
+ZURI-LOND.group55.       IN      A       55.0.2.1
+LOND-ZURI.group55.       IN      A       55.0.2.2
+PARI-GENE.group55.       IN      A       55.0.3.1
+GENE-PARI.group55.       IN      A       55.0.3.2
+PARI-LOND.group55.       IN      A       55.0.4.1
+LOND-PARI.group55.       IN      A       55.0.4.2
+PARI-NEWY.group55.       IN      A       55.0.5.1
+NEWY-PARI.group55.       IN      A       55.0.5.2
+PARI-MIAM.group55.       IN      A       55.0.6.1
+MIAM-PARI.group55.       IN      A       55.0.6.2
+LOND-BOST.group55.       IN      A       55.0.7.1
+BOST-LOND.group55.       IN      A       55.0.7.2
+LOND-NEWY.group55.       IN      A       55.0.8.1
+NEWY-LOND.group55.       IN      A       55.0.8.2
+GENE-MIAM.group55.       IN      A       55.0.9.1
+MIAM-GENE.group55.       IN      A       55.0.9.2
+NEWY-BOST.group55.       IN      A       55.0.10.1
+BOST-NEWY.group55.       IN      A       55.0.10.2
+NEWY-ATLA.group55.       IN      A       55.0.11.1
+ATLA-NEWY.group55.       IN      A       55.0.11.2
+NEWY-MIAM.group55.       IN      A       55.0.12.1
+MIAM-NEWY.group55.       IN      A       55.0.12.2
+ATLA-MIAM.group55.       IN      A       55.0.13.1
+MIAM-ATLA.group55.       IN      A       55.0.13.2

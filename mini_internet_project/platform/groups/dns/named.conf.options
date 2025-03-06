@@ -1,0 +1,10 @@
+options {
+    directory "/var/cache/bind";
+
+    recursion no;
+    listen-on { 198.0.0.100; };
+    allow-transfer { none; };
+
+    dnssec-validation auto; 
+    auth-nxdomain no;    # conform to RFC1035
+};

@@ -1,0 +1,91 @@
+#!/bin/bash
+vtysh  -c 'conf t' \
+ -c 'interface lo' \
+ -c 'ip address 55.151.0.1/24' \
+ -c 'exit' \
+ -c 'interface host' \
+ -c 'ip address 55.101.0.2/24' \
+ -c 'exit' \
+ -c 'router ospf' \
+ -c 'network 55.101.0.2/24 area 0' \
+ -c 'exit' \
+ -c 'router ospf' \
+ -c 'ospf router-id 55.151.0.1' \
+ -c 'network 55.151.0.1/24 area 0' \
+ -c 'exit'\
+ -c 'ip route 55.0.0.0/8 null0' \
+ -c 'ip prefix-list OWN_PREFIX seq 5 permit 55.0.0.0/8' \
+ -c 'route-map OWN_PREFIX permit 10' \
+ -c 'match ip address prefix-list OWN_PREFIX' \
+ -c 'exit' \
+ -c 'router bgp 55' \
+ -c 'network 55.0.0.0/8' \
+ -c 'neighbor 55.152.0.1 remote-as 55' \
+ -c 'neighbor 55.152.0.1 update-source lo' \
+ -c 'neighbor 55.152.0.1 next-hop-self' \
+ -c 'exit' \
+ -c 'router bgp 55' \
+ -c 'network 55.0.0.0/8' \
+ -c 'neighbor 55.153.0.1 remote-as 55' \
+ -c 'neighbor 55.153.0.1 update-source lo' \
+ -c 'neighbor 55.153.0.1 next-hop-self' \
+ -c 'exit' \
+ -c 'router bgp 55' \
+ -c 'network 55.0.0.0/8' \
+ -c 'neighbor 55.154.0.1 remote-as 55' \
+ -c 'neighbor 55.154.0.1 update-source lo' \
+ -c 'neighbor 55.154.0.1 next-hop-self' \
+ -c 'exit' \
+ -c 'router bgp 55' \
+ -c 'network 55.0.0.0/8' \
+ -c 'neighbor 55.155.0.1 remote-as 55' \
+ -c 'neighbor 55.155.0.1 update-source lo' \
+ -c 'neighbor 55.155.0.1 next-hop-self' \
+ -c 'exit' \
+ -c 'router bgp 55' \
+ -c 'network 55.0.0.0/8' \
+ -c 'neighbor 55.156.0.1 remote-as 55' \
+ -c 'neighbor 55.156.0.1 update-source lo' \
+ -c 'neighbor 55.156.0.1 next-hop-self' \
+ -c 'exit' \
+ -c 'router bgp 55' \
+ -c 'network 55.0.0.0/8' \
+ -c 'neighbor 55.157.0.1 remote-as 55' \
+ -c 'neighbor 55.157.0.1 update-source lo' \
+ -c 'neighbor 55.157.0.1 next-hop-self' \
+ -c 'exit' \
+ -c 'router bgp 55' \
+ -c 'network 55.0.0.0/8' \
+ -c 'neighbor 55.158.0.1 remote-as 55' \
+ -c 'neighbor 55.158.0.1 update-source lo' \
+ -c 'neighbor 55.158.0.1 next-hop-self' \
+ -c 'exit' \
+ -c 'interface port_ZURI' \
+ -c 'ip address 55.0.2.2/24' \
+ -c 'ip ospf cost 1' \
+ -c 'exit' \
+ -c 'router ospf' \
+ -c 'network 55.0.2.2/24 area 0' \
+ -c 'exit' \
+ -c 'interface port_PARI' \
+ -c 'ip address 55.0.4.2/24' \
+ -c 'ip ospf cost 1' \
+ -c 'exit' \
+ -c 'router ospf' \
+ -c 'network 55.0.4.2/24 area 0' \
+ -c 'exit' \
+ -c 'interface port_BOST' \
+ -c 'ip address 55.0.7.1/24' \
+ -c 'ip ospf cost 1' \
+ -c 'exit' \
+ -c 'router ospf' \
+ -c 'network 55.0.7.1/24 area 0' \
+ -c 'exit' \
+ -c 'interface port_NEWY' \
+ -c 'ip address 55.0.8.1/24' \
+ -c 'ip ospf cost 1' \
+ -c 'exit' \
+ -c 'router ospf' \
+ -c 'network 55.0.8.1/24 area 0' \
+ -c 'exit' \
+ -c 'exit' -c 'write' 
