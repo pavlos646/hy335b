@@ -1,16 +1,22 @@
 +------------------------------------------------------+
 |                                                      |
-|   Communication Networks 20XX  - Routing Project     |
-|             Build your mini-Internet!                |
+|                       HY335B                         |
+|                   Routing Project                    |
+|               Build your mini-Internet!              |
 |                                                      |
 |                                                      |
-|   You can modify this welcoming message by           |
-|   modifying the file welcoming_message.txt           |
-|   in the config directory                            |
+|   Brace yourself for an epic journey through the     |
+|   vast world of routing! Expect things to break,     |
+|   servers to crash, systems to shutdown-- and, of    |
+|   course, expect to have the time of your life :D    |  
 |                                                      |
-|   From here, you can access your virtual devices     |
-|   with the goto.sh script. For instance:             |
+|                    !!IMPORTANT!!                     |
+|         SAVE YOUR CONFIGS BEFORE YOU LEAVE!          |
+|       YOU HAVE BEEN WARNED, EXCEPTIONAL BEING!       |
 |                                                      |
-|   ./goto.sh MIAM router                              |
+|                sudo ./save_configs.sh                |
+|               sudo ./restore_configs.sh              |
+|                                                      |
+|       "Packets never lie- but they do get lost"      |
 |                                                      |
 +------------------------------------------------------+
