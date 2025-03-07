@@ -8,5 +8,5 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.
 
 
 apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-apt-get install openvswitch-switch=2.17.9
+apt-get install openvswitch-switch
 
