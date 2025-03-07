@@ -3,9 +3,9 @@
 ## Index
 * [Prequisite](#prerequisite)
 * [Build your AS](#build-your-as)
+* [Access your AS](#access-your-as)
 * [Save Configuration](#save-configuration)
 * [Restore Configuration](#restore-configuration)
-* [Access your AS](#access-your-as)
 * [Cleanup the AS](#cleanup-the-as)
 
 
