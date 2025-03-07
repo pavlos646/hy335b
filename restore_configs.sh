@@ -34,9 +34,14 @@ while IFS= read -r line; do
         
         echo "Configuring GENE interface: $interface with IP: $backup_ip"
         
+        if [[ ! -z "${current_ip_config[$interface]}" ]]; then
+            docker exec ${group_number}_GENErouter vtysh -c "conf t" \
+            -c "interface $interface" \
+            -c "no ip address ${current_ip_config[$interface]}"
+        fi
+
         docker exec ${group_number}_GENErouter vtysh -c "conf t" \
             -c "interface $interface" \
-            -c "no ip address ${current_ip_config[$interface]}" \
             -c "ip address $backup_ip" \
             -c "exit" \
             -c "exit" \
@@ -55,9 +60,14 @@ while IFS= read -r line; do
         
         echo "Configuring ZURI interface: $interface with IP: $backup_ip"
         
+        if [[ ! -z "${current_ip_config[$interface]}" ]]; then
+            docker exec ${group_number}_ZURIrouter vtysh -c "conf t" \
+            -c "interface $interface" \
+            -c "no ip address ${current_ip_config[$interface]}"
+        fi
+
         docker exec ${group_number}_ZURIrouter vtysh -c "conf t" \
             -c "interface $interface" \
-            -c "no ip address ${current_ip_config[$interface]}" \
             -c "ip address $backup_ip" \
             -c "exit" \
             -c "exit" \
@@ -98,3 +108,4 @@ while IFS= read -r line; do
     fi
 
 done < "$input_file"
+
