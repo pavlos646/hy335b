@@ -89,7 +89,7 @@ If the response is something like the following then you are good to go:
 OpenSSL 1.1.1f  31 Mar 2020
 ```
 
-Otherwise intall OpenSSL:
+Otherwise install OpenSSL:
 ```bash
 sudo apt install openssl -y
 ```
