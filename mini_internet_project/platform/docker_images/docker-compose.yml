@@ -1,0 +1,19 @@
+version: '3'
+services:
+  d_hostm:
+    image: 335b/d_hostm
+  d_router:
+    image: 335b/d_router
+  d_host:
+    image: 335b/d_host
+  d_ssh:
+    image: 335b/d_ssh
+  d_measurement:
+    image: 335b/d_measurement
+  d_dns:
+    image: 335b/d_dns
+  d_switch:
+    image: 335b/d_switch
+  d_matrix:
+    image: 335b/d_matrix
+
