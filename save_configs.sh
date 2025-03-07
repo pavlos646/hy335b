@@ -1,14 +1,14 @@
 #!/bin/bash
 
+readarray groups < ./mini_internet_project/platform/config/AS_config.txt
+group_k=(${groups[$k]})
+group_number="${group_k[0]}"
+
 echo "" > routers_backup.txt
 docker exec -i ${group_number}_ZURIrouter vtysh -c "show int brief" | grep "ZURI-L2" | awk '{if ($NF != "" && $NF != "default") print $1, $NF}' >> routers_backup.txt
 docker exec -i ${group_number}_GENErouter vtysh -c "show int brief" | grep "GENE-L2" | awk '{if ($NF != "" && $NF != "default") print $1, $NF}' >> routers_backup.txt
 
 echo -n "" > hosts_backup.txt
-
-readarray groups < ./mini_internet_project/platform/config/AS_config.txt
-group_k=(${groups[$k]})
-group_number="${group_k[0]}"
 
 runner (){
     echo "$1" >> hosts_backup.txt
@@ -46,3 +46,4 @@ hosts=( "L2_UNIV_staff_1"
 for host in "${hosts[@]}"; do
     runner $host
 done
+
