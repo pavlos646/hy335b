@@ -19,6 +19,7 @@ group_number="${group_k[0]}"
 if [[ "$1" == *"UNIV"* ]]; then
     sudo docker exec -it ${group_number}_L2_UNIV_${2} bash
 elif [[ "$2" == "router" ]]; then
+    cat ./mini_internet_project/platform/config/welcoming_message.txt	
     sudo docker exec -it ${group_number}_${1}router vtysh
 elif [[ "$2" == "host" ]]; then
     sudo docker exec -it ${group_number}_${1}host bash
