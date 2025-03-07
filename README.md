@@ -70,6 +70,18 @@ Run the following command to be able to run sudo commands wihout having to type 
 
 This will make you root.
 
+### Install Git
+
+```bash
+apt install git -y
+```
+
+To build the AS, first clone this [repository](https://github.com/pavlos646/hy335b).
+```bash
+git clone https://github.com/pavlos646/hy335b.git
+cd hy335b/
+```
+
 ### Install Docker Engine & Open vSwitch
 
 Run the following script to install Docker Engine and Open vSwitch:
@@ -96,22 +108,10 @@ sudo apt install openssl -y
 
 ## Build your AS
 
-Install git:
-```bash
-apt install git -y
-```
-
-To build the AS, first clone this [repository](https://github.com/pavlos646/hy335b).
-```bash
-git clone https://github.com/pavlos646/hy335b.git
-```
-
-Run the initialization script using your group number as the parameter:
-
-:information_source: Your group number will be your ASN (Autonomous System Number)
+Run the initialization script using your ASN as the parameter:
 
 ```bash
-./init.sh <group_number>
+./init.sh <ASN>
 ```
 For example, if your group number is 42, the command would look like this:
 ```bash
@@ -151,7 +151,9 @@ Once in a host, switch or router, just type `exit` to go back to your terminal.
 
 ## Save configuration
 
-To save configuration files for your routers and hosts, run the following script:
+To save configuration files for your **routers** and **hosts**, run the following script:
+
+:warning:The script does not save configuration for switches, only for routers and hosts. So in 1.2 you will have to reconfigure the switches if you turn off the topology.
 
 `./save_configs.sh`
 
