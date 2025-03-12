@@ -73,6 +73,7 @@ This will make you root.
 ### Install Git
 
 ```bash
+apt update
 apt install git -y
 ```
 
