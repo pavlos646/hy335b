@@ -167,12 +167,7 @@ To restore your configuration from the files you previously saved, run the follo
 
 ## Cleanup the AS
 
-The are two ways to delete the AS. First, you can delete all the virtual ethernet pairs, docker containers and OVS switches processes used by the AS, with the following command:
-```
-./mini_internet_project/platform/cleanup/cleanup.sh
-```
-
-However, this script uses the configuration files, thus if they have changed since the time the AS was built, or if the AS did not setup properly, it might be that not all the components get deleted. That could be problematic if you try to start a new AS. We thus also provide a script that deletes *all* the ethernet pairs, containers and switches.
+We provide a script that deletes *all* the ethernet pairs, containers and switches.
 
 :warning: This also includes containers, switches and ethernet pairs which do not belong to your AS (e.g., other Docker containers you may have)!!!
 
